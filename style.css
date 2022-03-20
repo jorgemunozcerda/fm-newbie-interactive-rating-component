@@ -118,10 +118,6 @@ p {
     color: var(--pure-white);
 }
 
-.card form .rating-buttons .rating-button input[type="radio"] {
-    display: none;
-}
-
 .card form .rating-buttons .rating-button input[type="radio"]:checked + label {
     background: var(--medium-gray);
     color: var(--pure-white);
@@ -140,6 +136,31 @@ p {
     cursor: pointer;
     background: var(--pure-white);
     color: var(--orange);
+}
+
+.thank-you-card {
+    align-items: center;
+    display: none;
+}
+
+.thank-you-card .number-selection {
+    background: var(--dark-blue);
+    border-radius: 22.5px;
+    width: 193px;
+    height: 32px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thank-you-card .number-selection p {
+    margin: 0;
+    color: var(--orange);
+}
+
+.thank-you-card {
+    text-align: center;
 }
 
 .attribution {

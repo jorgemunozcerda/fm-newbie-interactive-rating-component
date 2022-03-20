@@ -28,12 +28,12 @@
 				text-align: center;
 			}
 			.attribution a {
-				color: hsl(228, 45%, 44%);
+				color: #fc7614;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="card">
+		<div class="card" id="visible-card">
 			<div class="star-circle">
 				<svg width="17" height="16" xmlns="http://www.w3.org/2000/svg">
 					<path
@@ -52,38 +52,43 @@
 			<form>
 				<div class="rating-buttons">
 					<div class="rating-button">
-						<input type="radio" name="rating" id="1" value="1" />
+						<input type="radio" name="rating" id="1" value="1" hidden />
 						<label for="1">1</label>
 					</div>
 					<div class="rating-button">
-						<input type="radio" name="rating" id="2" value="2" />
+						<input type="radio" name="rating" id="2" value="2" hidden />
 						<label for="2">2</label>
 					</div>
 					<div class="rating-button">
-						<input type="radio" name="rating" id="3" value="3" />
+						<input type="radio" name="rating" id="3" value="3" hidden />
 						<label for="3">3</label>
 					</div>
 					<div class="rating-button">
-						<input type="radio" name="rating" id="4" value="4" />
+						<input type="radio" name="rating" id="4" value="4" hidden />
 						<label for="4">4</label>
 					</div>
 					<div class="rating-button">
-						<input type="radio" name="rating" id="5" value="5" />
+						<input type="radio" name="rating" id="5" value="5" hidden />
 						<label for="5">5</label>
 					</div>
 				</div>
-				<button type="submit"><h2>SUBMIT</h2></button>
+				<button type="submit" id="submit-button"><h2>SUBMIT</h2></button>
 			</form>
 		</div>
 
-		<!-- Thank you state start -->
-
-		<!-- You selected -->
-		<!-- Add rating here -->
-		<!-- out of 5 Thank you! We appreciate you taking the time to give a rating. If
-		you ever need more support, don’t hesitate to get in touch! -->
-
-		<!-- Thank you state end -->
+		<div class="card thank-you-card" id="hidden-card">
+			<div class="image-container">
+				<img src="./images/illustration-thank-you.svg" alt="Thank you" />
+			</div>
+			<div class="number-selection" id="number-text-container">
+				<p>You selected <span id="number-text"></span> out of five</p>
+			</div>
+			<h1>Thank you!</h1>
+			<p>
+				We appreciate you taking the time to give a rating. If you ever need
+				more support, don’t hesitate to get in touch!
+			</p>
+		</div>
 
 		<div class="attribution">
 			Challenge by
@@ -97,3 +102,23 @@
 		</div>
 	</body>
 </html>
+
+<script>
+	const submit = document.getElementById("submit-button");
+  const numberText = document.getElementById("number-text");
+  const visibleCard = document.getElementById("visible-card");
+	const hiddenCard = document.getElementById("hidden-card");
+  const numberContainer = document.getElementById("number-text-container");
+
+	submit.addEventListener("click", (e) => {
+	  e.preventDefault();
+	  const rating = document.querySelector('input[name="rating"]:checked').value;
+
+	  numberText.innerText = rating;
+
+    visibleCard.style.display = "none";
+	  hiddenCard.style.display = "block";
+    numberContainer.style.alignSelf = "center";
+	  console.log(rating)
+	})
+</script>
