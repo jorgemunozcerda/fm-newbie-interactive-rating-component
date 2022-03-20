@@ -1,0 +1,148 @@
+:root {
+    --dark-blue: #262E38;
+    --light-grey: #969FAD;
+    --medium-gray: #7C8798;
+    --orange: #FC7614;
+    --pure-white: #FFFFFF;
+    --very-dark-blue: #131518;
+    --black-gradient: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Overpass';
+    background-color: var(--very-dark-blue);
+    height: 100VH;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 19px;
+    letter-spacing: 2px;
+}
+
+.rating-text {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+}
+
+p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.card {
+    background: var(--black-gradient);
+    border-radius: 30px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 412px;
+}
+
+.card .star-circle {
+    background: var(--dark-blue);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card h1 {
+    margin-top: 30px;
+    color: var(--pure-white);
+}
+
+.card p {
+    margin-top: 15px;
+    color: var(--light-grey);
+}
+
+.card form {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.card form .rating-buttons {
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+}
+
+.card form .rating-buttons .rating-button {
+    background: var(--dark-blue);
+    border-radius: 50%;
+    height: 51px;
+    width: 51px;
+    line-height: 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card form .rating-buttons .rating-button label {
+    width: 100%;
+    height: 100%;
+    color: var(--medium-gray);
+    border-radius: 50%;
+}
+
+.card form .rating-buttons .rating-button label:hover {
+    cursor: pointer;
+    background: var(--orange);
+    color: var(--pure-white);
+}
+
+.card form .rating-buttons .rating-button input[type="radio"] {
+    display: none;
+}
+
+.card form .rating-buttons .rating-button input[type="radio"]:checked + label {
+    background: var(--medium-gray);
+    color: var(--pure-white);
+}
+
+.card form button {
+    background: var(--orange);
+    border-radius: 22.5px;
+    color: var(--pure-white);
+    width: 100%;
+    border-style: none;
+    height: 45px;
+}
+
+.card form button:hover {
+    cursor: pointer;
+    background: var(--pure-white);
+    color: var(--orange);
+}
+
+.attribution {
+    clear: both;
+    color: var(--light-grey);
+}
