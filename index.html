@@ -76,7 +76,7 @@
 			</form>
 		</div>
 
-		<div class="card thank-you-card" id="hidden-card">
+		<div class="card thank-you-card" id="hidden-card" hidden>
 			<div class="image-container">
 				<img src="./images/illustration-thank-you.svg" alt="Thank you" />
 			</div>
@@ -117,8 +117,6 @@
 	  numberText.innerText = rating;
 
     visibleCard.style.display = "none";
-	  hiddenCard.style.display = "block";
-    numberContainer.style.alignSelf = "center";
-	  console.log(rating)
+	hiddenCard.style.display = "flex";
 	})
 </script>
